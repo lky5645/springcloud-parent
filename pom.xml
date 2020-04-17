@@ -23,6 +23,7 @@
         <module>cloud-provider-hystrix-order8008</module>
         <module>cloud-provider-hystrix-dashboard9001</module>
         <module>cloud-provider-eureka-gateway9527</module>
+        <module>cloud-provider-config3344</module>
     </modules>
     <!--版本号管理-->
     <properties>
