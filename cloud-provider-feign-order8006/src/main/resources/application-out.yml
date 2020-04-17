@@ -1,0 +1,30 @@
+server:
+  port: 8006
+spring:
+  application:
+    name: provider-order-service
+logging:
+  file:
+    path: log/
+    name: cloud-provider-order.log
+  level:
+    org.springfromework.web: debug
+    #设置fegin的打印级别和需要打印的类
+    com.ts.provider.service.PaymentFeginService: debug
+eureka:
+  client:
+    #true表示把自己注册到seever中
+    register-with-eureka: true
+    #true 才能使用负载均衡ribbon调用
+    fetch-registry: true
+    service-url:
+    #设置交互地址 #单机版
+      #defaultZone: http://localhost:7001/eureka/
+      #设置集群版
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
+#设置fegin客户端调用超时时间（默认支持ribbon，所以也就是设置ribbon的超时时间）
+ribbon:
+  #指建立连接所用的时间
+  ReadTimeout: 5000
+  #指简历连接后，从服务提供者拉取数据所用的时间
+  ConnectTimeout: 5000

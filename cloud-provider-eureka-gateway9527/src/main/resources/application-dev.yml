@@ -1,0 +1,46 @@
+server:
+  port: 9527
+spring:
+  application:
+    name: provider-eureka-gateway-service
+  cloud:
+  #采用配置的方式配置网管路由
+    gateway:
+      routes:
+          #路由的id，可以任意命名，但是需要保证唯一
+        - id: payment_routh
+          #匹配提供服务的地址
+          uri: http://localhost:8001
+          #断言 匹配对应的方法
+          predicates:
+            - Path=/payment/**
+            #after代表在这时间之后才生效
+            - After=2020-04-16T16:30:22.447+08:00[Asia/Shanghai]
+            #配置访问的cookie
+#            - Cookie=username,lky
+#------------采用动态的方式配置路由
+#    gateway:
+#      discovery:
+#        locator:
+#        #开启从注册中心动态创建路由功能，利用服务名进行配置路由
+#          enabled: true
+#      routes:
+#        - id: payment_routh
+#          uri: payment://PROVIDER-PAYMENT-SERVICE
+#          predicates:
+#            - Path=/payment/**
+
+eureka:
+  client:
+    #true表示把自己注册到seever中
+    register-with-eureka: true
+    #true
+    fetch-registry: true
+    service-url:
+    #设置交互地址 单机版
+      defaultZone: http://localhost:7001/eureka/
+  instance:
+  #主机名的修改
+    instance-id: gatewayEureka9527
+    #访问路径可以显示ip地址
+    prefer-ip-address: true

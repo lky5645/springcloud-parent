@@ -1,0 +1,4 @@
+com\ts\provider\OrderConsulApplication8005.class
+com\ts\provider\config\OrderConfig.class
+com\ts\provider\util\CommonResult.class
+com\ts\provider\controller\OrderController.class

@@ -1,0 +1,3 @@
+com\ts\provider\controller\OrderController.class
+com\ts\provider\OpenFeignApplication.class
+com\ts\provider\service\PaymentFeginService.class

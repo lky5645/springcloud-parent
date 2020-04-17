@@ -1,0 +1,8 @@
+com\ts\provider\ribbon\MyLoadBalancer.class
+com\ts\provider\util\CommonResult.class
+com\ts\ribbon\SpecialRule.class
+com\ts\provider\OrderApplication.class
+com\ts\provider\ribbon\impl\MyLoadBalancerImpl.class
+com\ts\provider\config\OrderConfig.class
+com\ts\provider\controller\OrderController.class
+com\ts\ribbon\MyRuleConfig.class

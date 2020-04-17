@@ -1,0 +1,8 @@
+G:\ideaworkspace\springcloud-parent\cloud-provider-eureka-order8002\src\main\java\com\ts\provider\ribbon\MyLoadBalancer.java
+G:\ideaworkspace\springcloud-parent\cloud-provider-eureka-order8002\src\main\java\com\ts\provider\controller\OrderController.java
+G:\ideaworkspace\springcloud-parent\cloud-provider-eureka-order8002\src\main\java\com\ts\provider\config\OrderConfig.java
+G:\ideaworkspace\springcloud-parent\cloud-provider-eureka-order8002\src\main\java\com\ts\provider\util\CommonResult.java
+G:\ideaworkspace\springcloud-parent\cloud-provider-eureka-order8002\src\main\java\com\ts\ribbon\SpecialRule.java
+G:\ideaworkspace\springcloud-parent\cloud-provider-eureka-order8002\src\main\java\com\ts\ribbon\MyRuleConfig.java
+G:\ideaworkspace\springcloud-parent\cloud-provider-eureka-order8002\src\main\java\com\ts\provider\ribbon\impl\MyLoadBalancerImpl.java
+G:\ideaworkspace\springcloud-parent\cloud-provider-eureka-order8002\src\main\java\com\ts\provider\OrderApplication.java
