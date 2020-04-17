@@ -1,0 +1,21 @@
+server:
+  port: 3344
+spring:
+  application:
+    name: cloud-config-center-server #注册到eureka的访问名称
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/lky5645/springcloud-parent-config.git  #在git上面的地址，初始化的时候回到git上面拉取这个配置
+#          uri: git@github.com:lky5645/springcloud-parent-config.git
+          #搜索在git上面的项目目录
+          search-paths:
+            - springcloud-parent-config
+      #读取对应的分支
+      label: master
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+

@@ -7,7 +7,9 @@ spring:
     config:
       server:
         git:
-          uri: git@github.com:lky5645/springcloud-parent-config.git  #在git上面的地址，初始化的时候回到git上面拉取这个配置
+          #采用shh公钥的方式连接git
+          uri: git@github.com:lky5645/springcloud-parent-config.git
+          ignoreLocalSshSettings: true  #为了激活基于属性的SSH配置
           #搜索在git上面的项目目录
           search-paths:
             - springcloud-parent-config
