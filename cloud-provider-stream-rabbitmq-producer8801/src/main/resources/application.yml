@@ -1,0 +1,45 @@
+server:
+  port: 8801
+spring:
+  application:
+    name: stream-rabbitmq-producer
+  cloud:
+    stream:
+    #绑定rabbitmq的服务信息
+      binders:
+      #表示定义名称 用于bander绑定整合
+        defaultRabbit:
+        #消息组件的类型
+          type: rabbit
+        #设置rabbit的相关环境
+          environment:
+            spring:
+              rabbitmq:
+                host: localhost
+                port: 5672
+                username: guest
+                password: guest
+      #服务的整合处理
+      bindings:
+      #这个名称是一个通道的名称
+        output:
+          #表示要用exchange名称定义/类似于topic
+          destination: studyExchange
+          #设置消息的类型 json格式
+          content-type: application/json
+          #表示要具体绑定到位置
+          binder: defaultRabbit
+eureka:
+  client:
+    #true表示把自己注册到seever中
+    register-with-eureka: true
+    #true
+    fetch-registry: true
+    service-url:
+    #设置交互地址 单机版
+      defaultZone: http://localhost:7001/eureka/
+  instance:
+  #主机名的修改
+    instance-id: rabbitmq-producer8801
+    #访问路径可以显示ip地址
+    prefer-ip-address: true

@@ -21,9 +21,17 @@
         <module>cloud-provider-feign-order8006</module>
         <module>cloud-provider-eureka-hystrix-payment8007</module>
         <module>cloud-provider-hystrix-order8008</module>
+        <module>cloud-provider-eureka-zipkin-payment8009</module>
         <module>cloud-provider-hystrix-dashboard9001</module>
         <module>cloud-provider-eureka-gateway9527</module>
-        <module>cloud-provider-config3344</module>
+        <module>cloud-provider-config-server3344</module>
+        <module>cloud-provider-config-client3355</module>
+        <module>cloud-provider-config-client3366</module>
+        <module>cloud-provider-stream-rabbitmq-producer8801</module>
+        <module>cloud-provider-stream-rabbitmq-consumer8802</module>
+        <module>cloud-provider-stream-rabbitmq-consumer8803</module>
+        <module>cloud-provider-eureka-zipkin-order8010</module>
+
     </modules>
     <!--版本号管理-->
     <properties>

@@ -1,0 +1,33 @@
+server:
+  port: 3344
+spring:
+  application:
+    name: cloud-config-center-server #注册到eureka的访问名称
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/lky5645/springcloud-parent-config.git  #在git上面的地址，初始化的时候回到git上面拉取这个配置
+#          uri: git@github.com:lky5645/springcloud-parent-config.git
+          #搜索在git上面的项目目录
+          search-paths:
+            - springcloud-parent-config
+      #读取对应的分支
+      label: master
+ #配置ribbitMq
+  rabbitmq:
+    host: localhost
+    username: guest
+    password: guest
+    port: 5672
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+#需要暴露监控端点，用于git一旦更改，这边可以及时响应
+#暴露bus刷新配置端点  修改git的文件内容后，主动发起 curl -X POST "http://localhost:3344/actuator/bus-refresh"
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'bus-refresh'

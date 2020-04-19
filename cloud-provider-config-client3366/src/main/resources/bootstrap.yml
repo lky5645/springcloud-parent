@@ -1,0 +1,34 @@
+server:
+  port: 3366
+spring:
+  application:
+    name: config-eureka-client
+  cloud:
+    config:
+     #分支名称
+      label: master
+      #配置文件名称前缀
+      name: config
+      #配置文件名称后缀
+      profile: dev
+      #单机版的获取git上面的地址,配置中心地址，也可以通过eureka集群的方式获取地址
+      uri: http://localhost:3344
+  #配置rabbitMq相关的配置
+  rabbitmq:
+    username: guest
+    password: guest
+    host: localhost
+    port: 5672
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+#需要暴露监控端点，用于git一旦更改，这边可以及时响应
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+
